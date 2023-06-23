@@ -1,7 +1,6 @@
 using CorrelationId;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Hosting;
-using Serilog;
 using Vertical.Slice.Template.Shared.Web.Extensions;
 using Vertical.Slice.Template.Shared.Web.ProblemDetail.Middlewares.CaptureExceptionMiddleware;
 
@@ -30,10 +29,6 @@ public static partial class WebApplicationExtensions
             // bet before .net 8 preview 5 we should add `IExceptionHandlerFeature` manually with our `UseCaptureException`
             app.UseCaptureException();
         }
-
-        // this middleware should be first middleware
-        // request logging just log in information level and above as default
-        app.UseSerilogRequestLogging();
 
         app.UseCustomCors();
 
