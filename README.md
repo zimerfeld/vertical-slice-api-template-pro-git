@@ -1,0 +1,1 @@
+# vertical-slice-api-template-pro-git
